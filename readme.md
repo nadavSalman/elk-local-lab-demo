@@ -13,7 +13,7 @@
 
 ### Note for mac users:
 
-* Update set ```useGrpcfuse": false``` inside  docker configuration file : ```vi  ~/Library/Group\ Containers/group.com.docker/settings.json```
+* Update set ```useGrpcfuse": false``` inside  docker configuration file : ```vi  ~/Library/Group\ Containers/group.com.docker/settings.console```
 
 
 ---
@@ -72,7 +72,7 @@ copy ca cet from one of the nodes
 
 
 # Test https request : 
-```json
+```console
 $ curl --cacert ca.crt -X GET  https://localhost:9200/ | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -108,7 +108,7 @@ $ curl --cacert ca.crt -X GET  https://localhost:9200/ | jq
 
 ### Authentication
 
-```json
+```console
 $ curl -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/ | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -136,8 +136,8 @@ $ curl -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/ | jq
 
 
 ### Query Index using elastic rest api  :
-```json
-$ curl -H "Content-Type:application/json" -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/products/_search -d '{ "query": { "match_all": {} } }'  | jq
+```console
+$ curl -H "Content-Type:application/console" -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/products/_search -d '{ "query": { "match_all": {} } }'  | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   409  100   377  100    32  24646   2092 --:--:-- --:--:-- --:--:-- 51125
@@ -232,8 +232,8 @@ post /products/_doc
 ```
 
 Lets retrive the document with curl get request : 
-```json
- $ curl -H "Content-Type:application/json" -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/products/_doc/s4dQ2YQBdupJyOWaGEPV  | jq
+```console
+ $ curl -H "Content-Type:application/console" -u elastic:elastic --cacert ca.crt -X GET  https://localhost:9200/products/_doc/s4dQ2YQBdupJyOWaGEPV  | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   177  100   177    0     0   5837      0 --:--:-- --:--:-- --:--:--  7695
