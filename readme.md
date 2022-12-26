@@ -58,7 +58,44 @@ check whether an index has actually been created : ``` GET _cat/indices shows th
 ---
 
 
+##  Fire up the Python Flask app for the demo :
+```
+cd flask-first-microservice/cashman-flask-project
+# make shure pipenv is installed 
+pip install pipenv
+# or 
+pip3 install pipenv
+ 
+pipenv sync # Installs all packages specified in Pipfile.lock. 
 
+pipenv shell # Spawns a shell within the virtualenv.
+
+# View that all project dependecy are installed : 
+ $ pip3 freeze
+click==8.1.3
+Flask==2.2.2
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+marshmallow==3.18.0
+packaging==21.3
+pyparsing==3.0.9
+Werkzeug==2.2.2
+
+# Run the server :
+ $ ./bootstrap.sh 
+ * Serving Flask app './cashman/index.py'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.101.10.55:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 103-907-532
+
+```
 
 
 
