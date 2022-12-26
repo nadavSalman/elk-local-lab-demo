@@ -4,6 +4,13 @@ filebeat.inputs:
   enabled: true
   paths:
     - /var/log/app_logs/*.log
+- type: mqtt
+  hosts: 
+    - tcp://emqx:1883
+  username: "admin"
+  password: "public"
+  topics: 
+    - sample_topic
 output.elasticsearch:
   hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'
   username: '${ELASTICSEARCH_USERNAME:}'

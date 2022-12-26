@@ -10,7 +10,7 @@ services:
     user: "0"
     command: >
       bash -c '
-        if [ x${ELASTIC_PASSWORD} == x ]; then
+        if [ x${ELASTIC_PASSWORD} == x ]; then  
           echo "Set the ELASTIC_PASSWORD environment variable in the .env file";
           exit 1;
         elif [ x${KIBANA_PASSWORD} == x ]; then
@@ -249,6 +249,21 @@ services:
       - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
       - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs
 
+  emqx:
+    image: emqx/emqx:4.3.8
+    container_name: emqx
+    ports:
+      - 18083:18083 
+      - 1883:1883
+    environment:
+    - "EMQX_NODE_NAME=emqx@node1.emqx.io"
+  
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx_ctl", "status"]
+      interval: 5s
+      timeout: 25s
+      retries: 5
+ 
 volumes:
   certs:
     driver: local
