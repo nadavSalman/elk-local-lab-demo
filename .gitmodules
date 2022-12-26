@@ -1,0 +1,3 @@
+[submodule "flask-first-microservice"]
+	path = flask-first-microservice
+	url = https://github.com/nadavSalman/flask-first-microservice.git
