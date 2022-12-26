@@ -251,3 +251,11 @@ Lets retrive the document with curl get request :
   }
 }
 ```
+
+
+
+## mqttx client :
+```
+    mqttx sub -t 'sample_topic' -h 'localhost' -p 1883
+    mqttx pub -t 'sample_topic' -h 'localhost' -p 1883 -m 'Hello from MQTTX CLI'
+```
