@@ -241,7 +241,7 @@ services:
     container_name: filebeat
     volumes:
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
-      - /Users/nsalman/dev-me/flask-first-microservice/app-logs:/var/log/app_logs
+      - ./flask-first-microservice/cashman-flask-project/app-logs:/var/log/app_logs
       - certs:/usr/share/elasticsearch/config/certs
     environment:
       - ELASTICSEARCH_HOSTS=https://es01:9200
